@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1024"> <!-- Set fixed width for mobile -->
+    <title>Shreashi's Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 0;
+            margin: 0;
+            width: 1024px; /* Force desktop width */
+            margin: 0 auto; /* Center the layout */
+        }
+        header img {
+            width: 100%;
+            height: auto;
+        }
+        section {
+            padding: 20px;
+        }
+        ul {
+            list-style-type: square;
+        }
+        form {
+            margin-top: 20px;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .comment {
+            margin: 10px 0;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="https://github.com/supriyo-web/EcoInk/raw/main/WhatsApp%20Image%202024-10-19%20at%2011.57.37%20AM.jpeg" alt="Shreashi's Project Header">
+    </header>
+
+    <!-- Introduction Section -->
+    <section style="display: flex; flex-direction: row; justify-content: space-between; padding: 20px;">
+        <div>
+            <h2>I am Shreashi</h2>
+            <p>A student of Class 9 from Ladhuram Thosniwal Sarada Vidya Mandir.</p>
+            <p>I am making a project which will help us to reduce air pollution.</p>
+        </div>
+        <img src="https://github.com/supriyo-web/EcoInk/raw/main/WhatsApp%20Image%202024-10-19%20at%2011.57.38%20AM.jpeg" alt="Shreashi" style="width: 200px; height: auto;">
+    </section>
+
+    <!-- Project Description Section -->
+    <section>
+        <h2>About the Project</h2>
+        <p>The project is a pollution-reducing machine designed to assist in improving air quality. Below are some of its features:</p>
+        <ul>
+            <li>Absorbs smoke from the air</li>
+            <li>Makes ink out of the absorbed smoke</li>
+            <li>Potential revenue from selling ink to overcome installation costs</li>
+        </ul>
+    </section>
+
+    <!-- Comments Section -->
+    <section>
+        <h2>Comments</h2>
+        <form onsubmit="submitComment(); return false;">
+            <label for="comment-input">Leave a comment:</label><br>
+            <textarea id="comment-input" name="comment" rows="4" cols="50" placeholder="Write your thoughts here..."></textarea><br>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="comments-display">
+            <h3>User Comments</h3>
+            <p>No comments yet. Be the first to comment!</p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        Made by Supriyo - Web, launched using GitHub
+    </div>
+
+    <script>
+        function submitComment() {
+            const commentInput = document.getElementById('comment-input').value;
+            const commentsDisplay = document.getElementById('comments-display');
+
+            if (commentInput) {
+                // Clear the default message
+                if (commentsDisplay.querySelector('p')) {
+                    commentsDisplay.querySelector('p').remove();
+                }
+
+                const newComment = document.createElement('div');
+                newComment.classList.add('comment');
+                newComment.innerText = commentInput;
+
+                commentsDisplay.appendChild(newComment);
+                document.getElementById('comment-input').value = ''; // Clear input
+            }
+        }
+    </script>
+
+</body>
+</html>
